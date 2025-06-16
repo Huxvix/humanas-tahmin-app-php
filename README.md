@@ -26,11 +26,6 @@ cd humanas-backend-php
 composer install
 ```
 
-3. `.env` dosyasını oluşturun:
-```bash
-cp .env.example .env
-```
-
 5. PHP'nin yerleşik sunucusunu başlatın:
 ```bash
 php -S localhost:8000
