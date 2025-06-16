@@ -12,22 +12,22 @@ class PredictionService {
             return [];
         }
 
-        // Convert all logins to DateTime objects
+        // Humanas API'dan alınan dateleri datetime objesine çevirir
         $times = array_map(function($ts) {
             return new DateTimeImmutable($ts);
         }, $logins);
 
-        // Calculate intervals between logins
+        // Loginler arasındaki aralığı alır
         $intervals = [];
         for ($i = 1; $i < count($times); $i++) {
             $intervals[] = $times[$i]->getTimestamp() - $times[$i-1]->getTimestamp();
         }
 
-        // Mean interval algorithm
+        // Mean interval algoritması her bir aralığı alır, toplar, ortalamasını alır ve son login'e ekler. elde edilen tarih tahmini sonraki login tarihidir
         $avg = array_sum($intervals) / count($intervals);
         $nextMean = $times[count($times)-1]->add(new \DateInterval('PT' . round($avg) . 'S'));
 
-        // Median interval algorithm
+        // Median interval algoritması her bir aralığı alır, sıralar ve ortadaki değeri son login'e ekler, elde edilen tarih tahmini sonraki login tarihidir
         sort($intervals);
         $count = count($intervals);
         $middle = floor($count / 2);
