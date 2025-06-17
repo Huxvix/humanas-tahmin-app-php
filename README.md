@@ -10,7 +10,6 @@ Bu proje, Humanas için geliştirilmiş bir tahmin uygulamasıdır. Frontend Rea
 
 ### Frontend için:
 - Node.js 22
-- React.js
 - npm
 
 ## Kurulum Adımları
