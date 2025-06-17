@@ -10,6 +10,7 @@ Bu proje, Humanas için geliştirilmiş bir tahmin uygulamasıdır. Frontend Rea
 
 ### Frontend için:
 - Node.js 22
+- React.js
 - npm
 
 ## Kurulum Adımları
@@ -57,6 +58,7 @@ REACT_APP_API_URL=http://localhost:8000 (veya sizin backend URL'niz)
 5. Geliştirme sunucusunu başlatın:
 ```bash
 npm start dev
+```
 
 ## API Endpointleri
 
